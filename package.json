@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "mongodb": "^6.7.0"
-  }
+  },
+  "name": "the-tradesmith-schema",
+  "description": "Welcome to the repository for **The Tradesmith Schema**. This repository defines the schema and serves as a submodule for the **The Tradesmith** project.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-tertius/the-tradesmith-schema.git"
+  },
+  "author": "Tertius van Niekerk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-tertius/the-tradesmith-schema/issues"
+  },
+  "homepage": "https://github.com/daniel-tertius/the-tradesmith-schema#readme"
 }
