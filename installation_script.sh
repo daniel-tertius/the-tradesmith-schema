@@ -46,7 +46,7 @@ cd "-" >/dev/null || {
 }
 
 # Add the submodule entry to package.json
-npm install --save "file:lib/schema" || {
+npm install "file:lib/schema" || {
     echo "Failed to add submodule to package.json."
     exit 1
 }
