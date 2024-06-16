@@ -3,18 +3,18 @@
 submodule_url="git@github.com:daniel-tertius/the-tradesmith-schema.git"
 
 cd "$(git rev-parse --show-toplevel)"
-mkdir -p "src/functions"
+mkdir -p "lib"
 
 # Check if the submodule directory exists before removing it
-if [ -d "functions/schema" ]; then
-    git submodule deinit -f functions/schema
-    git rm --cached functions/schema
-    rm -rf "functions/schema"
+if [ -d "lib/schema" ]; then
+    git submodule deinit -f lib/schema
+    git rm --cached lib/schema
+    rm -rf "lib/schema"
     echo "Existing submodule removed."
 fi
 
 # Add the submodule
-if git submodule add --force "$submodule_url" "functions/schema"; then
+if git submodule add --force "$submodule_url" "lib/schema"; then
     echo "Submodule 'the-tradesmith-schema' added successfully!"
 else
     echo "Failed to add submodule. Check the submodule URL and try again."
@@ -22,7 +22,7 @@ else
 fi
 
 # Navigate into the submodule directory
-cd "functions/schema" || {
+cd "lib/schema" || {
     echo "Failed to navigate to submodule directory."
     exit 1
 }
@@ -42,6 +42,12 @@ git pull origin master >/dev/null || {
 # Return to the root directory of your repository
 cd "-" >/dev/null || {
     echo "Failed to return to repository root directory."
+    exit 1
+}
+
+# Add the submodule entry to package.json
+npm install --save "file:lib/schema" || {
+    echo "Failed to add submodule to package.json."
     exit 1
 }
 
