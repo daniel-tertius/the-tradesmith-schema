@@ -1,9 +1,9 @@
-import { ObjectId } from "mongodb";
+import { ObjectId } from 'mongodb';
 
 export default interface Schema {
-  // log: log;
-  bot: bot;
-  user: user;
+	// log: log;
+	bot: bot;
+	user: user;
 }
 
 // interface log {
@@ -16,14 +16,16 @@ export default interface Schema {
 // }
 
 interface bot {
-  _id: ObjectId;
-  bot_title: string;
-  user_id: string;
+	_id: ObjectId;
+	bot_title: string;
+	base_order_size: number;
+	target_profit: number;
+	user_id: string;
 }
 
 interface user {
-  _id: ObjectId;
-  email_address: string;
-  password: string;
-  last_logged_in: Date;
+	_id: ObjectId;
+	email_address: string;
+	password: string;
+	last_logged_in: Date;
 }
