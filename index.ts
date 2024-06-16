@@ -1,4 +1,4 @@
-export default interface DB {
+export default interface Schema {
   log: log;
   config: config;
   user: user;
