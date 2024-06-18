@@ -16,7 +16,7 @@ export default interface Schema {
 // }
 
 interface bot {
-	_id: ObjectId;
+	_id: ObjectId | string;
 	bot_title: string;
 	base_order_size: number;
 	target_profit: number;
@@ -24,7 +24,7 @@ interface bot {
 }
 
 interface user {
-	_id: ObjectId;
+	_id: ObjectId | string;
 	email_address: string;
 	password: string;
 	last_logged_in: Date;
