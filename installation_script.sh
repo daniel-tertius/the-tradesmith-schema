@@ -2,8 +2,8 @@
 
 submodule_url="git@github.com:daniel-tertius/the-tradesmith-schema.git"
 
-cd "$(git rev-parse --show-toplevel)"
-mkdir -p "lib"
+# cd "$(git rev-parse --show-toplevel)"
+# mkdir -p "lib"
 
 # Check if the submodule directory exists before removing it
 if [ -d "lib/schema" ]; then
