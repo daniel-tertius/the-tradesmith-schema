@@ -27,5 +27,5 @@ interface user {
 	_id: ObjectId | string;
 	email_address: string;
 	password: string;
-	last_logged_in: Date;
+	last_logged_in?: Date;
 }
