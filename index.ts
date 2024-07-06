@@ -20,6 +20,8 @@ interface bot {
 	bot_title: string;
 	base_order_size: number;
 	target_profit: number;
+	timeout_ms: number;
+	status: 'idle' | 'running';
 	user_id: string;
 }
 
