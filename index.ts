@@ -4,6 +4,7 @@ export default interface Schema {
 	// log: log;
 	bot: bot;
 	user: user;
+	lunoKey: lunoKey;
 }
 
 // interface log {
@@ -22,6 +23,7 @@ interface bot {
 	target_profit: number;
 	timeout_ms: number;
 	status: 'idle' | 'running';
+	exchange: 'Luno' | 'Binance';
 	user_id: string;
 }
 
@@ -30,4 +32,11 @@ interface user {
 	email_address: string;
 	password: string;
 	last_logged_in?: Date;
+}
+
+interface lunoKey {
+	_id: ObjectId | string;
+	key: string;
+	secret: string;
+	user_id: string;
 }
