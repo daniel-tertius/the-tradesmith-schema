@@ -24,6 +24,8 @@ interface bot {
 	timeout_ms: number;
 	status: 'idle' | 'running';
 	exchange: 'Luno' | 'Binance';
+	// Can go up to five.
+	buy_stack: { order_id: string; price: number }[];
 	user_id: string;
 }
 
