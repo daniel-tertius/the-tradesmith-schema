@@ -1,20 +1,19 @@
 import { ObjectId } from 'mongodb';
 
 export default interface Schema {
-	// log: log;
+	log: log;
 	bot: bot;
 	user: user;
 	lunoKey: lunoKey;
 }
 
-// interface log {
-//   created_at: Date;
-//   title: string;
-//   message: string;
-//   actor: string;
-//   action: string;
-//   success: boolean;
-// }
+interface log {
+  date: Date;
+  action: 'place' | 'success' | 'cancel';
+  btc_price: number;
+  bid_amount: number;
+  ask_amount: number;
+}
 
 interface bot {
 	_id: ObjectId | string;
@@ -24,8 +23,19 @@ interface bot {
 	timeout_ms: number;
 	status: 'idle' | 'running';
 	exchange: 'Luno' | 'Binance';
-	// Can go up to five.
-	buy_stack: { order_id: string; price: number }[];
+	order_stack: {
+		date: Date,
+		
+		bid_order_id: string;
+		bid_price: number;
+		bid_amount: number;
+
+		ask_order_id?: string;
+		ask_price?: number;
+		ask_amount?: number;
+	}[];
+	max_stack_size: number;
+
 	user_id: string;
 }
 
